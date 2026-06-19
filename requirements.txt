@@ -1,0 +1,348 @@
+# =============================================================================
+# AI AGENT PLATFORM — Python AI Service Dependencies
+# =============================================================================
+# Python Version: 3.11+
+# Generated for: Production-Ready Multi-Agent AI Platform
+# Architecture: FastAPI + LangChain + LangGraph + Gemini/OpenAI
+# =============================================================================
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [1] CORE AI — Foundation Models & Inference
+# ─────────────────────────────────────────────────────────────────────────────
+
+# LangChain core runtime — chains, prompt templates, output parsers, runnables
+langchain==0.3.25
+
+# LangChain community integrations — 3rd-party tool/model wrappers
+langchain-community==0.3.24
+
+# LangChain core abstractions — base classes, schemas, callbacks
+langchain-core==0.3.62
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [2] LANGGRAPH — Multi-Agent Orchestration
+# ─────────────────────────────────────────────────────────────────────────────
+
+# LangGraph — stateful, graph-based multi-agent workflows
+# Used for: Supervisor, Planner, Research, Writer, Critic, Resume, Interview,
+#           Evaluation, Vision, and File agents
+langgraph==0.2.73
+
+# LangGraph checkpoint persistence — saves/resumes agent state
+langgraph-checkpoint==2.0.26
+
+# LangGraph checkpoint with PostgreSQL backend — durable graph state in Postgres
+langgraph-checkpoint-postgres==2.0.21
+
+# LangGraph checkpoint with Redis backend — fast ephemeral state in Redis
+langgraph-checkpoint-redis==0.0.6
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [3] LLM PROVIDERS — Model SDKs
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Google Gemini integration for LangChain (primary LLM provider)
+langchain-google-genai==2.1.4
+
+# OpenAI integration for LangChain (fallback / GPT-4o Vision)
+langchain-openai==0.2.17
+
+# Official Google Generative AI SDK (direct Gemini API access)
+google-generativeai==0.8.5
+
+# Official OpenAI Python SDK
+openai==1.84.0
+
+# Anthropic SDK (optional fallback — Claude Sonnet/Haiku)
+anthropic==0.53.0
+
+# Google AI GenerativeAI for embeddings (text-embedding-004)
+google-ai-generativelanguage==0.6.15
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [4] RAG — Retrieval-Augmented Generation Pipeline
+# ─────────────────────────────────────────────────────────────────────────────
+
+# LangChain text splitters — chunking strategies (recursive, token-based, etc.)
+langchain-text-splitters==0.3.8
+
+# OpenAI-compatible embeddings via LangChain (text-embedding-ada-002 / 3-small)
+# Also used for Google embeddings wrapper
+langchain-community==0.3.24  # already listed — provides embedding wrappers
+
+# Unstructured — universal document parser for PDF, DOCX, HTML, TXT ingestion
+unstructured==0.16.23
+
+# Unstructured PDF extras — pdfminer + pdf2image for layout-aware parsing
+unstructured[pdf]==0.16.23
+
+# PyMuPDF — fast, accurate PDF text and image extraction
+pymupdf==1.25.5
+
+# PDFPlumber — table-aware PDF extraction (structured data inside PDFs)
+pdfplumber==0.11.6
+
+# python-docx — read and extract DOCX file content
+python-docx==1.1.2
+
+# python-pptx — extract text from PPTX slide decks
+python-pptx==1.0.2
+
+# Tiktoken — OpenAI's BPE tokenizer (accurate chunk size counting)
+tiktoken==0.9.0
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [5] VECTOR DATABASE — Embeddings Storage & Similarity Search
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ChromaDB — primary vector store for RAG retrieval
+chromadb==0.6.3
+
+# LangChain ChromaDB integration — vectorstore wrapper
+langchain-chroma==0.2.4
+
+# FAISS — CPU-based in-memory approximate nearest-neighbor search (secondary/cache)
+faiss-cpu==1.9.0
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [6] FASTAPI — Web Framework & Serving
+# ─────────────────────────────────────────────────────────────────────────────
+
+# FastAPI — async REST API framework
+fastapi==0.115.12
+
+# Uvicorn — ASGI server with lifespan support
+uvicorn[standard]==0.34.3
+
+# Pydantic v2 — data validation, request/response schemas
+pydantic==2.11.5
+
+# Pydantic settings — .env / environment variable management
+pydantic-settings==2.9.1
+
+# Python Multipart — form-data & file upload handling
+python-multipart==0.0.20
+
+# HTTPX — async HTTP client (external API calls within FastAPI)
+httpx==0.28.1
+
+# AnyIO — async primitives, used by FastAPI/Starlette internally
+anyio==4.9.0
+
+# Starlette — ASGI toolkit (FastAPI's foundation — CORS, middleware, etc.)
+starlette==0.46.2
+
+# SSE-Starlette — Server-Sent Events streaming endpoint support
+sse-starlette==2.3.5
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [7] DATABASE — PostgreSQL & Async ORM
+# ─────────────────────────────────────────────────────────────────────────────
+
+# SQLAlchemy — ORM and query builder (async mode)
+sqlalchemy==2.0.41
+
+# AsyncPG — high-performance async PostgreSQL driver
+asyncpg==0.30.0
+
+# Alembic — database migrations
+alembic==1.16.1
+
+# Psycopg3 (async) — alternative async PostgreSQL driver for LangGraph checkpoints
+psycopg[async]==3.2.9
+
+# Psycopg3 connection pool
+psycopg-pool==3.2.6
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [8] REDIS — Caching, Sessions & Pub/Sub
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Redis async client — rate limiting, session caching, pub/sub for streaming
+redis[hiredis]==5.3.0
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [9] AUTHENTICATION & SECURITY
+# ─────────────────────────────────────────────────────────────────────────────
+
+# PyJWT — JWT creation and validation (access + refresh tokens)
+pyjwt==2.10.1
+
+# Passlib with bcrypt — password hashing
+passlib[bcrypt]==1.7.4
+
+# Python-Jose — JWT with RSA/ECDSA support (alternative to PyJWT)
+python-jose[cryptography]==3.5.0
+
+# Cryptography — RSA key generation, encryption primitives
+cryptography==44.0.3
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [10] FILE PROCESSING — Document Ingestion Pipeline
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Pillow — image manipulation (resize, convert, thumbnail for Vision agent)
+pillow==11.2.1
+
+# Aiofiles — async file I/O for upload handling
+aiofiles==24.1.0
+
+# Filetype — magic byte detection for upload validation (not extension-based)
+filetype==1.2.0
+
+# Chardet — character encoding detection for TXT files
+chardet==5.2.0
+
+# XlsxWriter — generate Excel files from SQL Generator Agent output
+xlsxwriter==3.2.3
+
+# Openpyxl — read/write XLSX (also used by pandas)
+openpyxl==3.1.5
+
+# Pandas — tabular data processing (SQL agent results, CSV analysis)
+pandas==2.2.3
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [11] OCR — Optical Character Recognition
+# ─────────────────────────────────────────────────────────────────────────────
+
+# PyTesseract — Python wrapper for Tesseract OCR engine
+pytesseract==0.3.13
+
+# pdf2image — convert PDF pages to images for OCR pipeline
+pdf2image==1.17.0
+
+# EasyOCR — deep learning-based multilingual OCR (better than Tesseract for complex layouts)
+easyocr==1.7.2
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [12] VISION — Image Understanding & Multimodal
+# ─────────────────────────────────────────────────────────────────────────────
+
+# OpenCV — image preprocessing (Vision agent: resize, denoise, convert)
+opencv-python-headless==4.11.0.86
+
+# Transformers — Hugging Face models (CLIP, BLIP-2 vision-language models)
+transformers==4.51.3
+
+# Torch (CPU) — required by Transformers for inference
+torch==2.7.0
+
+# Torchvision — vision model utilities
+torchvision==0.22.0
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [13] AUDIO — Speech & Transcription
+# ─────────────────────────────────────────────────────────────────────────────
+
+# OpenAI Whisper — speech-to-text transcription
+openai-whisper==20240930
+
+# SoundFile — read/write audio files (WAV, FLAC, OGG)
+soundfile==0.13.1
+
+# Pydub — audio format conversion (MP3 → WAV for Whisper)
+pydub==0.25.1
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [14] TOOL IMPLEMENTATIONS
+# ─────────────────────────────────────────────────────────────────────────────
+
+# DuckDuckGo Search — Web Search Tool (no API key required)
+duckduckgo-search==7.5.3
+
+# Tavily — AI-optimized web search (Research Agent primary tool)
+tavily-python==0.7.6
+
+# Requests — synchronous HTTP (URL Reader Tool, GitHub Analyzer)
+requests==2.32.3
+
+# BeautifulSoup4 — HTML parsing for URL Reader Tool
+beautifulsoup4==4.13.4
+
+# lxml — fast XML/HTML parser (used with BeautifulSoup4)
+lxml==5.4.0
+
+# yt-dlp — YouTube metadata/transcript fetching (YouTube Summarizer Tool)
+yt-dlp==2025.6.9
+
+# YouTube Transcript API — fetch YouTube auto-captions without yt-dlp
+youtube-transcript-api==1.0.3
+
+# Deep Translator — Translation Tool (Google Translate API wrapper)
+deep-translator==1.11.4
+
+# PyGithub — GitHub Analyzer Tool (repo stats, PR analysis, code search)
+pygithub==2.6.1
+
+# Sympy — symbolic math (Calculator Tool: solve equations, not just eval)
+sympy==1.13.3
+
+# Numexpr — fast numerical expression evaluator (Calculator Tool)
+numexpr==2.10.2
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [15] MEMORY — Short-Term & Long-Term Agent Memory
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Mem0 — structured long-term memory layer for AI agents
+mem0ai==0.1.99
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [16] UTILITIES — General-Purpose
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Python-dotenv — .env file loader for local development
+python-dotenv==1.1.0
+
+# Tenacity — retry logic with exponential backoff (LLM API call resilience)
+tenacity==9.1.2
+
+# Structlog — structured logging with JSON output
+structlog==25.3.0
+
+# Rich — pretty terminal output and logging during development
+rich==14.0.0
+
+# Python-dateutil — date parsing utilities
+python-dateutil==2.9.0.post0
+
+# Arrow — human-friendly datetime library
+arrow==1.3.0
+
+# TQDM — progress bars for batch embedding / ingestion jobs
+tqdm==4.67.1
+
+# UUID6 — UUID v6/v7 generation for time-ordered IDs
+uuid6==2024.1.12
+
+# Orjson — ultra-fast JSON serialisation (streaming responses)
+orjson==3.10.18
+
+# Ujson — fast JSON alternative
+ujson==5.10.0
+
+# ─────────────────────────────────────────────────────────────────────────────
+# [17] MONITORING & OBSERVABILITY
+# ─────────────────────────────────────────────────────────────────────────────
+
+# LangSmith — LangChain tracing, evaluation, and dataset management
+langsmith==0.3.43
+
+# OpenTelemetry API — vendor-neutral telemetry instrumentation
+opentelemetry-api==1.33.0
+
+# OpenTelemetry SDK — trace/metric/log SDK
+opentelemetry-sdk==1.33.0
+
+# OpenTelemetry OTLP exporter — send traces to Jaeger / Tempo / Datadog
+opentelemetry-exporter-otlp==1.33.0
+
+# OpenTelemetry FastAPI instrumentation — auto-instrument HTTP endpoints
+opentelemetry-instrumentation-fastapi==0.54b0
+
+# Prometheus client — /metrics endpoint for Grafana dashboards
+prometheus-client==0.21.1
+
+# Sentry SDK — error tracking and performance monitoring
+sentry-sdk[fastapi]==2.29.1
